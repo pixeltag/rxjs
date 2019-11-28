@@ -18,6 +18,10 @@ let observer = observable.subscribe(
   () => addItem("Completed")
 );
 
+let observer2 = observable.subscribe((x: any) => addItem(x));
+
+observer.add(observer2);
+
 setTimeout(() => {
   observer.unsubscribe();
 }, 6000);
